@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная №1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table class="table" border="1">
+        <tr>
+            <td colspan="2" class="header-table">
+                <header>
+                    <h1>Лабораторная работа №1</h1>
+                    <p>Гаврилов Кирилл P3231  Вариант: 22658</p>
+                </header>
+            </td>
+        </tr>
+        <tr>
+            <td class="left-column">
+                <div class="canvas-graph">
+                    <canvas id="graph" width="600px" height="600px"></canvas>
+                </div>
+                <form id="graph-form" novalidate>
+                    <table class="table-form">
+                        <tr>
+                            <td><label>Изменения X: </label></td>
+                            <td>
+                                <div id="x-buttons" class="button-group">
+                                    <button type="button" class="button-x" data-value="-3">-3</button>
+                                    <button type="button" class="button-x" data-value="-2">-2</button>
+                                    <button type="button" class="button-x" data-value="-1">-1</button>
+                                    <button type="button" class="button-x active" data-value="0">0</button>
+                                    <button type="button" class="button-x" data-value="1">1</button>
+                                    <button type="button" class="button-x" data-value="2">2</button>
+                                    <button type="button" class="button-x" data-value="3">3</button>
+                                    <button type="button" class="button-x" data-value="4">4</button>
+                                    <button type="button" class="button-x" data-value="5">5</button>
+                                </div>
+                                <input type="hidden" name="x" id="input-x" value="0">
+                                <div id="error-x" class="error-msg"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label>Изменения Y: </label></td>
+                            <td>
+                                <input type="text" maxlength="10" id="input-y" placeholder="От -5 до 3" name="y" required>
+                                <div id="error-y" class="error-msg"></div>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td><label>Изменения R: </label></td>
+                            <td>
+                                <div id="r-buttons" class="radio-group">
+                                    <label><input type="radio" name="r" value="1">1</label>
+                                    <label><input type="radio" name="r" value="1.5">1.5</label>
+                                    <label><input type="radio" name="r" value="2">2</label>
+                                    <label><input type="radio" name="r" value="2.5">2.5</label>
+                                    <label><input type="radio" name="r" value="3" checked>3</label>
+                                </div>
+                                <div id="error-r" class="error-msg"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="help-buttons">
+                                <button type="submit" id="buttom-submit">Проверить</button>
+                                <button type="button" id="clear-button">Очистить историю</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </td>
+            <td class="right-column">
+                <h3>История проверок:</h3>
+                <div class="table-wrapper">
+                    <table id="results">
+                        <thead>
+                            <tr>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>R</th>
+                                <th>Результат</th>
+                                <th>Дата и время</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-body"></tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script type="module" src="script/script.js"></script>
+</body>
+</html>
